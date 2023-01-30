@@ -173,6 +173,8 @@ INSERT INTO tbcliente (DNI, NOMBRE, DIRECCION1, DIRECCION2, BARRIO, CIUDAD, ESTA
 ('5648641702', 'Paolo Mendez', 'Martires de Tacubaya 65', '', 'Héroes de Padierna', 'Ciudad de México', 'CDMX', '21002020', '1991-01-30', 29, 'M', 120000, 220000, 0), 
 ('492472718', 'Jorge Castro', 'Federal México-Toluca 5690', '', 'Locaxco', 'Ciudad de México', 'CDMX', '22012002', '1994-01-19', 26, 'M', 75000, 95000, 1);
 
+
+/*Inserto todos los datos de los productos*/
 INSERT INTO tbProducto (PRODUCTO, NOMBRE, TAMANO, SABOR, ENVASE, PRECIO_LISTA) VALUES ('773912', 'Clean', '1 Litro', 'Naranja', 'Botella PET', 8.01),
 ('838819', 'Clean', '1,5 Litros', 'Naranja', 'Botella PET', 12.01),
 ('1037797', 'Clean', '2 Litros', 'Naranja', 'Botella PET', 16.01),
@@ -209,3 +211,22 @@ INSERT INTO tbProducto (PRODUCTO, NOMBRE, TAMANO, SABOR, ENVASE, PRECIO_LISTA) V
 ('290478', 'Vida del Campo', '350 ml', 'Sandía', 'Lata', 4.56),
 ('1002767', 'Vida del Campo', '700 ml', 'Cereza/Manzana', 'Botella de Vidrio', 8.41);
 
+/*Visualizo los datos*/
+SELECT * FROM tbcliente;
+SELECT * FROM tbproducto;
+
+/*Forma larga de ver todos los datos*/
+SELECT DNI, NOMBRE, DIRECCION1, DIRECCION2, BARRIO, CIUDAD, ESTADO,CP, FECHA_NACIMIENTO, EDAD, 
+SEXO, LIMITE_CREDITO, VOLUMEN_COMPRA, PRIMERA_COMPRA FROM tbcliente;
+
+/*Ver solo algunos datos*/
+SELECT DNI, NOMBRE FROM tbcliente;
+
+/*cada nombre de columna a visualizar se separa con ","*/
+SELECT NOMBRE, SEXO, EDAD, DIRECCION1 FROM tbcliente;
+
+/*Para agregar nombre de visualización usamos "AS"*/
+SELECT NOMBRE AS Nombre_Completo, SEXO AS Género, EDAD AS Años, DIRECCION1 AS Domicilio FROM tbcliente;
+
+/*Para limitar a la cantidad de filas a visualizar*/
+SELECT NOMBRE, SEXO, EDAD, DIRECCION1 FROM tbcliente LIMIT 6;
