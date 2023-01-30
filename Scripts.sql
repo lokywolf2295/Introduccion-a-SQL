@@ -230,3 +230,16 @@ SELECT NOMBRE AS Nombre_Completo, SEXO AS Género, EDAD AS Años, DIRECCION1 AS 
 
 /*Para limitar a la cantidad de filas a visualizar*/
 SELECT NOMBRE, SEXO, EDAD, DIRECCION1 FROM tbcliente LIMIT 6;
+
+/*Muestra todos los campos donde figure el valor buscado*/
+SELECT * FROM tbproducto WHERE SABOR = 'Maracuyá';
+SELECT * FROM tbproducto WHERE ENVASE = 'Botella de Vidrio';
+
+/*Actualizamos un valor donde dice Limon lo cambiamos por Citrico*/
+UPDATE tbproducto SET SABOR = 'Cítrico' WHERE SABOR = 'Limón';
+
+/*mostramos los datos pero no retorna nada porque se borró limon*/
+SELECT * FROM tbproducto WHERE SABOR = 'Limón';
+
+/*Ahora se ve el nuevo cambio*/
+SELECT * FROM tbproducto WHERE SABOR = 'Cítrico';
