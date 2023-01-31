@@ -267,3 +267,33 @@ SELECT * FROM tbproducto WHERE PRECIO_LISTA < 28.51;
 
 /*Para visualizar un float usamos el BETWEEN es decir entre uno y otro numeros*/
 SELECT * FROM tbproducto WHERE PRECIO_LISTA BETWEEN 28.49 AND 28.52;
+
+/*Mostramos por fecha*/
+SELECT * FROM tbcliente WHERE FECHA_NACIMIENTO = '1995-01-13';
+
+/*Mostramos los menores a la fecha*/
+SELECT * FROM tbcliente WHERE FECHA_NACIMIENTO < '1995-01-13';
+
+/*Mostramos quienes nacieron ese dia o despues*/
+SELECT * FROM tbcliente WHERE FECHA_NACIMIENTO >= '1995-01-13';
+
+/*Mostramos por año*/
+SELECT * FROM tbcliente WHERE YEAR(FECHA_NACIMIENTO) = 1995;
+
+/*Mostramos el día*/
+SELECT * FROM tbcliente WHERE DAY(FECHA_NACIMIENTO) = 20;
+
+/*Mostramos productos entre tal precio y tal otro incluidos los 2*/
+SELECT * FROM tbproducto WHERE PRECIO_LISTA >= 28.49 AND  PRECIO_LISTA <=28.52;
+
+/*Mostramos datos de envase de un nombre O otro nombre*/
+SELECT * FROM tbproducto WHERE ENVASE = 'Lata' OR ENVASE = 'Botella PET';
+
+/*Mostramos datos de precio de un precio Y otro precio incluido ambos*/
+SELECT * FROM tbproducto WHERE PRECIO_LISTA >= 15 AND  PRECIO_LISTA <=25;
+
+/*Mostramos datos de precio de un precio Y otro precio incluido ambos O envase de un nombre O otro nombre*/
+SELECT * FROM tbproducto WHERE (PRECIO_LISTA >= 15 AND  PRECIO_LISTA <=25) OR (ENVASE = 'Lata' OR ENVASE = 'Botella PET');
+
+/*otro filtro con AND y OR*/
+SELECT * FROM tbproducto WHERE (PRECIO_LISTA >= 15 AND  TAMANO = '1 Litro') OR (ENVASE = 'Lata' OR ENVASE = 'Botella PET');
