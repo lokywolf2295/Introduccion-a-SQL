@@ -243,3 +243,27 @@ SELECT * FROM tbproducto WHERE SABOR = 'Limón';
 
 /*Ahora se ve el nuevo cambio*/
 SELECT * FROM tbproducto WHERE SABOR = 'Cítrico';
+
+/*retornar valores mayores a*/
+SELECT * FROM tbcliente WHERE EDAD > 27;
+
+/*retornar valores menor o igual a*/
+SELECT * FROM tbcliente WHERE EDAD <= 27;
+
+/*retornar valores diferentes*/
+SELECT * FROM tbcliente WHERE EDAD <> 26;
+
+/*Segun el orden alfabético los mayores a */
+SELECT * FROM tbcliente WHERE  NOMBRE > 'Erica Carvajo';
+
+/*Segun el orden alfabético los menores o igual a */
+SELECT * FROM tbcliente WHERE  NOMBRE <= 'Erica Carvajo';
+
+/*Por mas que el numero flotante esté bien escrito el igual no lo toma*/
+SELECT * FROM tbproducto WHERE PRECIO_LISTA = 28.51;
+
+/*Si se pueden visualizar los mayores y menores, el numero indicado figura en el mayor*/
+SELECT * FROM tbproducto WHERE PRECIO_LISTA < 28.51;
+
+/*Para visualizar un float usamos el BETWEEN es decir entre uno y otro numeros*/
+SELECT * FROM tbproducto WHERE PRECIO_LISTA BETWEEN 28.49 AND 28.52;
